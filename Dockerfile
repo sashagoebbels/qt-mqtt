@@ -41,3 +41,8 @@ WORKDIR /home/hudson/qtmqtt/build
 RUN ( /usr/local/Qt-5.15.2/bin/qmake -r .. || true ) && /usr/local/Qt-5.15.2/bin/qmake -r ..
 RUN make -j4 \
  && make install
+
+WORKDIR /home/hudson/qt5-build
+RUN make clean
+WORKDIR /home/hudson/qtmqtt/build
+RUN make clean
